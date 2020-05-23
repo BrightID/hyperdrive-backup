@@ -1,0 +1,27 @@
+{
+  "name": "hyperdrive-backup",
+  "version": "1.0.0",
+  "description": "hyperdrive backup",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrightID/hyperdrive-backup.git"
+  },
+  "author": "rnbwd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrightID/hyperdrive-backup/issues"
+  },
+  "homepage": "https://github.com/BrightID/hyperdrive-backup#readme",
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "hyperdrive": "^10.11.0"
+  }
+}
