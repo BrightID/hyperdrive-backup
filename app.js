@@ -10,9 +10,10 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/backups/:key1/:key2", (req, res) => {
   const { key1, key2 } = req.params;
   const path = `/${key1}/${key2}`;
-  drive.readFile(path, function (err, data) {
-    if (err) {
-      console.log(err);
+  drive.readFile(path, function (error, data) {
+    if (error) {
+      res.status(500).json({ error });
+      return;
     }
     res.send(data);
   });
@@ -22,9 +23,10 @@ app.put("/backups/:key1/:key2", (req, res) => {
   const { data } = req.body;
   const { key1, key2 } = req.params;
   const path = `/${key1}/${key2}`;
-  drive.writeFile(path, Buffer.from(data), function (err) {
-    if (err) {
-      console.log(err);
+  drive.writeFile(path, Buffer.from(data), function (error) {
+    if (error) {
+      res.status(500).json({ error });
+      return;
     }
   });
   const stat = "TODO: generate hyperdrive url";
